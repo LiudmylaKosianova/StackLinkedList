@@ -17,6 +17,7 @@ typedef struct Stack
 
 Stack* create (int a);
 void push(int a, Stack* ptrS);
+void pop(Stack *ptr);
 
 
 #endif

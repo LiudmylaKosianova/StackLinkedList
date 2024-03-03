@@ -16,16 +16,30 @@ void push(int a, Stack* ptrS){
     if( (ptrS->currentSize+1) <= (ptrS->maxSize) ){
         Element *newE = (Element*) calloc (1, sizeof(Element));
         newE->data = a;
-        if(ptrS->top != NULL){ //checks if it isn't the first element in the stack
-            newE->previous = ptrS->top;
-        }else{
-            ptrS->top = newE;
-            newE->previous = NULL;
-        }        
         newE->next = NULL;
+        newE->previous = NULL;
+        if(ptrS->top == NULL){ //checks if it is the first element in the stack
+            ptrS->top = newE;
+        }else{
+            newE->previous = ptrS->top;
+            ptrS->top->next = newE;
+            ptrS->top = newE;
+
+        }        
+        
         ptrS->currentSize++;
+
     }else{
         printf("Cannot add more elements\n");
     }
+}
+
+//pop – get element from stack;
+void pop(Stack *ptr){
+    
+    ptr->top = ptr->top->previous;
+     
+    ptr->top->next = NULL;
+    ptr->currentSize--;
 }
 

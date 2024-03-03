@@ -6,13 +6,18 @@
 int main(){
 
     Stack* coffe;
-    coffe = create(2);
+    coffe = create(3);
     push(107, coffe);
-    printf("107 added ");
+    printf("%p coffe->top and %d coffe->top->data\n", coffe->top, coffe->top->data);
     push(1, coffe);
-    printf("1 added ");
+    printf("%p coffe->top and %d coffe->top->data\n", coffe->top, coffe->top->data);
     push(7,coffe);
-    printf("7 added ");
+    printf("%p coffe->top and %d coffe->top->data\n", coffe->top, coffe->top->data);
+    printf("\ncoffe current size %d\n", coffe->currentSize);
+    pop(coffe);
+    printf("coffe current size %d\n", coffe->currentSize);
+
+
 
     
 
