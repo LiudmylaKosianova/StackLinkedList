@@ -1,19 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "stack.h"
 
-typedef struct Element
-{
+//#include "stack.h"
+
+typedef struct Element{
     int data;
     struct Element *next;
     struct Element *previous;
 }Element;
 
-typedef struct Stack
-{
+typedef struct Stack{
     int maxSize;
     int currentSize;
-    Element* top;
+    Element *top;
 }Stack;
 
 
@@ -26,7 +25,7 @@ Stack* create (int a){
     ptrS->top = NULL;
 }
 //push – add element to stack;
-void push(int a, Stack* ptrS){
+void push(int a, Stack *ptrS){
     if( (ptrS->currentSize+1) <= (ptrS->maxSize) ){
         Element *newE = (Element*) calloc (1, sizeof(Element));
         newE->data = a;
@@ -43,3 +42,27 @@ void push(int a, Stack* ptrS){
     }
 }
 
+Element* createElement(int a){
+    Element *ptr;
+    ptr = (Element*) calloc(1, sizeof(Element));
+    ptr->data = a;
+    ptr->next = NULL;
+    ptr->previous = NULL;
+}
+
+int main(){
+
+    Stack* coffe;
+    coffe = create(2);
+    push(107, coffe);
+    printf("107 added ");
+    push(1, coffe);
+    printf("1 added ");
+    push(7,coffe);
+    printf("7 added ");
+
+    // Element *coffe = createElement(100);
+    // printf("coffe data %d\n", coffe->data);
+
+    return 0;
+}
