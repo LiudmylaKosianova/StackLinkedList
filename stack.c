@@ -10,7 +10,9 @@ Stack* create (int a){
     ptrS->maxSize = a;
     ptrS->currentSize =0;
     ptrS->top = NULL;
+    return ptrS;
 }
+
 //push – add element to stack;
 void push(int a, Stack* ptrS){
     if( (ptrS->currentSize+1) <= (ptrS->maxSize) ){
@@ -41,5 +43,23 @@ void pop(Stack *ptr){
      
     ptr->top->next = NULL;
     ptr->currentSize--;
+}
+
+//capacity – get amount of elements in stack;
+int capacity(Stack *ptr){
+    return ptr->currentSize;
+}
+
+//size – maximum amount of elements.
+int size(Stack *ptr){
+    return ptr->maxSize;
+}
+
+//Resize – increase/decrease size of stack.
+void resize(Stack *ptr, int a){
+    ptr->maxSize = a;
+    while( a < ptr->currentSize){
+        pop(ptr);
+    }
 }
 

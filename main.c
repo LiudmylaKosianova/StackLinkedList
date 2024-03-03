@@ -15,11 +15,7 @@ int main(){
     printf("%p coffe->top and %d coffe->top->data\n", coffe->top, coffe->top->data);
     printf("\ncoffe current size %d\n", coffe->currentSize);
     pop(coffe);
-    printf("coffe current size %d\n", coffe->currentSize);
-
-
-
-    
+    printf("coffe current size %d\n", coffe->currentSize);   
 
     return 0;
 }

@@ -18,6 +18,10 @@ typedef struct Stack
 Stack* create (int a);
 void push(int a, Stack* ptrS);
 void pop(Stack *ptr);
+int capacity(Stack *ptr);
+int size(Stack *ptr);
+void resize(Stack *ptr, int a);
+
 
 
 #endif
