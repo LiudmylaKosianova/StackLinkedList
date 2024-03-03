@@ -2,20 +2,6 @@
 #include <stdlib.h>
 #include "stack.h"
 
-typedef struct Element
-{
-    int data;
-    struct Element *next;
-    struct Element *previous;
-}Element;
-
-typedef struct Stack
-{
-    int maxSize;
-    int currentSize;
-    Element* top;
-}Stack;
-
 
 //create – create stack with number of elements;
 Stack* create (int a){

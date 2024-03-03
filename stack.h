@@ -4,15 +4,15 @@
 typedef struct Element
 {
     int data;
-    Element* next;
-    Element* previous;
+    struct Element *next;
+    struct Element *previous;
 }Element;
 
 typedef struct Stack
 {
     int maxSize;
     int currentSize;
-    Element* top;
+    Element *top;
 }Stack;
 
 Stack* create (int a);
