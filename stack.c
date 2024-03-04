@@ -26,7 +26,7 @@ Stack* create (int a){
  *  a - integer data value of the new element
  *  ptrS - a pointer to the Stack
  * Return:
- *  Doesnt' return anything, it's a void function
+ *  Doesn't return anything, it's a void function
 */
 void push(int a, Stack* ptrS){
     if( (ptrS->currentSize+1) <= (ptrS->maxSize) ){
@@ -49,13 +49,20 @@ void push(int a, Stack* ptrS){
     } 
 }
 
-//pop – get element from stack;
+
+/**
+ * Deletes (pops) the top element from the stack
+ * Parameters:
+ *  ptr - a pointer to the stack
+ * Return:
+ *  Doesn't return anything, it's a void function 
+*/
 void pop(Stack *ptr){
     if(ptr->top == NULL){
         //exit if the stack is empty
         return;
     }else if(ptr->top->previous == NULL){
-        //pop the last element
+        //pop the top element
         ptr->top = NULL;
         ptr->currentSize--;        
     }else{
@@ -66,17 +73,41 @@ void pop(Stack *ptr){
     
 }
 
-//capacity – get amount of elements in stack;
+
+/**
+ * Gets the current number of elements in the stack
+ * Parameters:
+ *  ptr - a pointer to the stack
+ * Return:
+ *  Returns int number of elements in the stack  
+*/
 int capacity(Stack *ptr){
     return ptr->currentSize;
 }
 
-//size – maximum amount of elements.
+
+/**
+ * Gets the maximum number of elements the stack can hold
+ * Parameters:
+ *  ptr - a pointer to the stack
+ * Return:
+ *  Returns int maximum number of elements that the stack can hold * 
+*/
 int size(Stack *ptr){
     return ptr->maxSize;
 }
 
-//Resize – increase/decrease size of stack.
+
+/**
+ * Changes the maximum number of elements that the stack can hold.
+ * If the new maximum is less, than the current number of elements in the stack,
+ * then the top extra elements will be deleted (poped)
+ * Parameters:
+ *  ptr - a pointer to the stack
+ *  a - integer value of the new maximum size of the stack
+ * Return:
+ *  Doesn't return anything, it's a void function
+*/
 void resize(Stack *ptr, int a){
     ptr->maxSize = a;
     while( a < ptr->currentSize){
@@ -84,6 +115,13 @@ void resize(Stack *ptr, int a){
     }
 }
  
+/**
+ * Prints the int data values of the elements in the stack
+ * Parameters:
+ *  ptr - a pointer to the stack
+ * Return:
+ *  Doesn't return anything, it's a void function.
+ * */ 
 void printStack(Stack *ptr){
     //exit if the an empty stack was passed as an argument
     if(ptr->top == NULL){
@@ -91,7 +129,7 @@ void printStack(Stack *ptr){
         return;
     }
 
-    //create a copy of ptr     
+    //create a copy of ptr for safe iteration     
     Stack *ptrS = (Stack*) calloc(1, sizeof(Stack));
     ptrS->currentSize=ptr->currentSize;
     ptrS->maxSize=ptr->maxSize;
