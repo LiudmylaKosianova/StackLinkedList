@@ -31,18 +31,23 @@ void push(int a, Stack* ptrS){
         
         ptrS->currentSize++;
 
-    }else{
-        printf("Cannot add more elements\n");
-    }
+    } 
 }
 
 //pop – get element from stack;
 void pop(Stack *ptr){
+    if(ptr->top == NULL){
+        printf("The Stack is empty, can't pop anything\n");        
+    }else if(ptr->top->previous == NULL){
+        //pop the last element
+        ptr->top = NULL;
+        ptr->currentSize--;        
+    }else{
+        ptr->top = ptr->top->previous;     
+        ptr->top->next = NULL;
+        ptr->currentSize--;
+    }    
     
-    ptr->top = ptr->top->previous;
-     
-    ptr->top->next = NULL;
-    ptr->currentSize--;
 }
 
 //capacity – get amount of elements in stack;
@@ -61,5 +66,16 @@ void resize(Stack *ptr, int a){
     while( a < ptr->currentSize){
         pop(ptr);
     }
+}
+ 
+void printStack(Stack *ptr){
+    int a = ptr->currentSize;
+    Stack *ptrS = ptr;
+    printf("*** ");
+    for(int i=0; i<a; i++){
+        printf("%d ",ptrS->top->data);
+        ptrS->top = ptrS->top->previous;
+    }
+    printf("***\n");
 }
 

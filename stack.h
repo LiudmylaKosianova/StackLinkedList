@@ -21,7 +21,7 @@ void pop(Stack *ptr);
 int capacity(Stack *ptr);
 int size(Stack *ptr);
 void resize(Stack *ptr, int a);
-
+void printStack(Stack *ptr);
 
 
 #endif
