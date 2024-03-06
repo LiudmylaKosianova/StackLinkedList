@@ -18,3 +18,5 @@ Functions implemented:
 
 **printStack** - Prints the intger data values of the elements in the Stack.
 
+Main function contains some tests. Run ***make*** to compile the main function. Run ***./main test*** to perform tests. Run ***./main --help*** or ***./main*** to output help information. Run ***make clean*** to remove executable files.
+
