@@ -10,6 +10,29 @@ void help_user(){
     printf("Stack* create(int a) - \tCreates a structure (Stack) and sets the maximum number of elements to int a\n"); 
     printf("\t\t\tParameters: int a - maximum number of elements\n");
     printf("\t\t\tReturn: a pointer to the structure (Stack) \n");
+    printf("\n");
+    printf("void push(int a, Stack* ptrS) - Adds one element to the stack.\n");
+    printf("\t\t\tParameters: int a (integer data value of the new element),ptrS (a pointer to the Stack)\n");
+    printf("\t\t\tReturn: void function\n\n");
+    printf("void pop(Stack *ptr) -  Deletes (pops) the top element from the stack\n");
+    printf("\t\t\tParameters: ptr(a pointer to the stack)\n");
+    printf("\t\t\tReturn: void function\n\n");
+    printf("int capacity(Stack *ptr) - Gets the current number of elements in the stack\n");
+    printf("\t\t\tParameters: ptr (a pointer to the stack)\n");
+    printf("\t\t\tReturn: Returns int number of elements in the stack\n\n"); 
+    printf("int size(Stack *ptr) -  Gets the maximum number of elements the stack can hold\n");
+    printf("\t\t\tParameters: ptr (a pointer to the stack)\n");
+    printf("\t\t\tReturn: Returns int maximum number of elements that the stack can hold\n\n");
+    printf("void resize(Stack *ptr, int a) - Changes the maximum number of elements that the stack can hold.\n");
+    printf("\t\t\tIf the new maximum is less than the current number of elements in the stack\n");
+    printf("\t\t\tthen the top extra elements will be deleted (poped)\n");
+    printf("\t\t\tParameters: ptr(a pointer to the stack),int a(integer value of the new maximum size of the stack)\n");
+    printf("\t\t\tReturn:void function\n\n");
+    printf("void printStack(Stack *ptr) - Prints the int data values of the elements in the stack\n");
+    printf("\t\t\tParameters: ptr(a pointer to the stack)\n");
+    printf("\t\t\tReturn: void function.\n");
+ 
+
 }
 
 
@@ -114,7 +137,7 @@ int size(Stack *ptr){
  * then the top extra elements will be deleted (poped)
  * Parameters:
  *  ptr - a pointer to the stack
- *  a - integer value of the new maximum size of the stack
+ *  int a - integer value of the new maximum size of the stack
  * Return:
  *  Doesn't return anything, it's a void function
 */
