@@ -3,11 +3,21 @@
 #include "stack.h"
 
 
+void help_user(){
+    printf("This stack is based on a linked list implemented as a structure\n");
+    printf("Functions: create(),push(),pop(),capacity(),size(),resize(),printStack()\n");
+    printf("\n");
+    printf("Stack* create(int a) - \tCreates a structure (Stack) and sets the maximum number of elements to int a\n"); 
+    printf("\t\t\tParameters: int a - maximum number of elements\n");
+    printf("\t\t\tReturn: a pointer to the structure (Stack) \n");
+}
+
+
  
 /*
- * Creates a structure (Stack) and sets the maximum number of elements to a 
+ * Creates a structure (Stack) and sets the maximum number of elements to int a 
  * Parameters: 
- *  a - maximum number of elements 
+ * int a - maximum number of elements 
  * Return:
  *  A pointer to the structure (Stack)
 */
@@ -23,7 +33,7 @@ Stack* create (int a){
 /*
  * Adds one element to the stack.
  * Parameters:
- *  a - integer data value of the new element
+ * int a - integer data value of the new element
  *  ptrS - a pointer to the Stack
  * Return:
  *  Doesn't return anything, it's a void function

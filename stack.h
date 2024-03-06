@@ -22,6 +22,7 @@ int capacity(Stack *ptr);
 int size(Stack *ptr);
 void resize(Stack *ptr, int a);
 void printStack(Stack *ptr);
+void help_user();
 
 
 #endif

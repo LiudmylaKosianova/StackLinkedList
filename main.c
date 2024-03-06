@@ -1,9 +1,15 @@
 #include <stdio.h>
 #include <assert.h>
+#include <string.h>
 #include "stack.h"
  
 
-int main(){
+int main(int argc, char *arg[]){
+
+    if( (argc<2)||(strcmp(arg[1], "-h")==0)||(strcmp(arg[1],"--help")==0) ){
+        help_user();
+        return 0;
+    }else if (strcmp(arg[1], "test")==0){
 
     //create a new stack
     Stack* coffe;
@@ -45,6 +51,8 @@ int main(){
     printf("There are %d elements in the Stack\n", coffe->currentSize);
     printStack(coffe);
     printf("Fine\n");
+    }   
+    
 
     return 0;
 }
